@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --purple-01: hsl(260, 100%, 95%);
-    --purple-02: hsl(264, 82%, 80%);
-    --purple-03: hsl(263, 55%, 52%);
+    --purple-01: #eee5ff;
+    --purple-02: #c4a2f6;
+    --purple-03: #7541c8;
 
-    --white: hsl(0, 0%, 100%)
-    --grey-01: hsl(214, 17%, 92%);
-    --grey-02: hsl(0, 0%, 81%);
-    --grey-03: hsl(224, 10%, 45%);
-    --grey-04: hsl(217, 19%, 35%);
-    --dark-blue: hsl(219, 29%, 14%);
-    --black: hsl(0, 0%, 7%);
+    --white: #ffffff;
+    --grey-01: #e7eaee;
+    --grey-02: #cfcfcf;
+    --grey-03: #676d7e;
+    --grey-04: #48556a;
+    --dark-blue: #19212e;
+    --black: #121212;
 
     --font-primary: 'Barlow Semi Condensed';
+
+    --box-sizing-primary: 250px;
+    --box-sizing-secundary: 270px;
+    --box-sizing-tertiary: 530px;
 }
 
 * {
@@ -25,4 +29,187 @@
 body {
     font-family: var(--font-primary), Arial, Helvetica, sans-serif;
     font-size: 0.8125rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 80px 60px;
+    background-color: var(--grey-01);
+}
+
+
+/*======================*/
+/*SECTION CARD CONTAINER*/
+/*======================*/
+
+.card-container {
+    display: grid;
+    grid-template-areas: 
+    "box-01 box-01 box-02 box-05"
+    "box-03 box-04 box-04 box-05";
+    column-gap: 30px;
+    row-gap: 25px;
+    padding: 40px;
+}
+
+
+/*======================*/
+/*   SECTION CARD ITEM  */
+/*======================*/
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 30px;
+    color: var(--white);
+    box-shadow: 40px 50px 40px #19212e35;
+    z-index: 2;
+}
+
+.card-infor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid transparent;
+}
+
+.card-infor--text {
+    display: flex;
+    flex-direction: column;
+}
+
+p.name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+p.graduation {
+    font-size: 0.8rem;
+    font-weight: 200;
+}
+
+p.comment {
+    font-size: 1.2rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+p.description {
+    line-height: 150%;
+}
+
+
+/*======================*/
+/*   INDIVIDUAL BOXES   */
+/*======================*/
+
+/* BOX 01*/
+.box-01 {
+    position: relative;
+    grid-area: box-01;
+    width: var(--box-sizing-tertiary);
+    height: var(--box-sizing-secundary);
+    background-color: var(--purple-03);
+}
+
+.box-01 .card-img {
+    border-color: var(--purple-02);
+}
+
+.box-01 .card-infor--text , .box-01 p.description {
+    color: var(--purple-01);
+}
+
+.box-01 p.comment {
+    color: var(--white);
+}
+
+/*BOX 02*/
+.box-02 {
+    grid-area: box-02;
+    width: var(--box-sizing-primary);
+    height: var(--box-sizing-secundary);
+    background-color: var(--grey-04);
+}
+
+.box-02 .card-infor--text , .box-02 p.description {
+    color: var(--grey-02);
+}
+
+.box-02 p.comment {
+    color: var(--white);
+}
+
+/*BOX 03*/
+.box-03 {
+    grid-area: box-03;
+    width: var(--box-sizing-primary);
+    height: var(--box-sizing-secundary);
+}
+
+/*BOX 04*/
+.box-04 {
+    grid-area: box-04;
+    width: var(--box-sizing-tertiary);
+    height: var(--box-sizing-secundary);
+    background-color: var(--dark-blue);
+}
+
+.box-04 .card-infor--text {
+    color: var(--grey-01);
+}
+
+.box-04  .card-img {
+    border-color: var(--purple-03);
+}
+
+.box-04 p.comment {
+    color: var(--grey-02);
+}
+
+.box-04 p.description {
+    color: var(--grey-01);
+}
+
+/*BOX 05*/
+.box-05 {
+    grid-area: box-05;
+    width: var(--box-sizing-primary);
+}
+
+
+/*BOX 03 AND BOX 05*/
+.box-03 , .box-05 {
+    background-color: var(--white);
+    color: var(--grey-03);
+}
+
+.box-03 p.name, .box-05 p.name {
+    color: var(--grey-04);
+}
+
+.box-03 p.comment, .box-05 p.comment {
+    color: var(--grey-04);
+}
+
+
+
+.bg-pattern {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    z-index: 1;
 }
