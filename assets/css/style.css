@@ -213,3 +213,67 @@ p.description {
     right: 50px;
     z-index: 1;
 }
+
+@media (max-width: 1170px) {
+
+    :root {
+        --box-sizing-primary: 100%;
+        --box-sizing-secundary: auto;
+        --box-sizing-tertiary: 100%;
+    }
+
+    main {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .card-container {
+        grid-template-areas: none;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .card-item {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .bg-pattern {
+        display: none;
+    }
+
+    .box-01, .box-02, .box-03, .box-04, .box-05 {
+        grid-area: auto !important;
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+@media (max-width: 375px) {
+    
+    p.name {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    p.graduation {
+        font-size: 0.7rem;
+        font-weight: 200;
+    }
+
+    p.comment {
+        font-size: 1rem;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    p.description {
+        line-height: normal;
+    }
+
+
+}
